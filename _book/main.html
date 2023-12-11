@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quarto CRC Book - 1&nbsp; TUGAS KLASIFIKASI DATA PROYEK SAINS DATA - B</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./main.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">TUGAS KLASIFIKASI DATA PROYEK SAINS DATA - B</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quarto CRC Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./main.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">TUGAS KLASIFIKASI DATA PROYEK SAINS DATA - B</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#bussiness-understanding" id="toc-bussiness-understanding" class="nav-link active" data-scroll-target="#bussiness-understanding"><span class="header-section-number">1.1</span> BUSSINESS UNDERSTANDING</a>
+  <ul class="collapse">
+  <li><a href="#identifikasi-kasus" id="toc-identifikasi-kasus" class="nav-link" data-scroll-target="#identifikasi-kasus"><span class="header-section-number">1.1.1</span> <strong>Identifikasi kasus</strong> :</a></li>
+  <li><a href="#tujuan-proyek" id="toc-tujuan-proyek" class="nav-link" data-scroll-target="#tujuan-proyek"><span class="header-section-number">1.1.2</span> <strong>Tujuan Proyek</strong> :</a></li>
+  </ul></li>
+  <li><a href="#data-understanding" id="toc-data-understanding" class="nav-link" data-scroll-target="#data-understanding"><span class="header-section-number">1.2</span> DATA UNDERSTANDING</a>
+  <ul class="collapse">
+  <li><a href="#about-data" id="toc-about-data" class="nav-link" data-scroll-target="#about-data"><span class="header-section-number">1.2.1</span> <strong>About Data</strong></a></li>
+  <li><a href="#mendeskripsikan-data" id="toc-mendeskripsikan-data" class="nav-link" data-scroll-target="#mendeskripsikan-data"><span class="header-section-number">1.2.2</span> <strong>Mendeskripsikan Data</strong></a></li>
+  <li><a href="#deskripsi-fitur" id="toc-deskripsi-fitur" class="nav-link" data-scroll-target="#deskripsi-fitur"><span class="header-section-number">1.2.3</span> Deskripsi Fitur</a></li>
+  <li><a href="#eksplorasi-data" id="toc-eksplorasi-data" class="nav-link" data-scroll-target="#eksplorasi-data"><span class="header-section-number">1.2.4</span> <strong>Eksplorasi Data</strong></a></li>
+  <li><a href="#mengidentifikasi-kualitas-data" id="toc-mengidentifikasi-kualitas-data" class="nav-link" data-scroll-target="#mengidentifikasi-kualitas-data"><span class="header-section-number">1.2.5</span> <strong>Mengidentifikasi Kualitas Data</strong></a></li>
+  <li><a href="#hasil-analisa-pada-data-understanding" id="toc-hasil-analisa-pada-data-understanding" class="nav-link" data-scroll-target="#hasil-analisa-pada-data-understanding"><span class="header-section-number">1.2.6</span> <strong>Hasil Analisa Pada Data Understanding :</strong></a></li>
+  </ul></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing"><span class="header-section-number">1.3</span> DATA PREPROCESSING</a>
+  <ul class="collapse">
+  <li><a href="#menghapus-data-duplikat" id="toc-menghapus-data-duplikat" class="nav-link" data-scroll-target="#menghapus-data-duplikat"><span class="header-section-number">1.3.1</span> <strong>Menghapus Data Duplikat</strong></a></li>
+  <li><a href="#menyeimbangkan-data-tiap-target" id="toc-menyeimbangkan-data-tiap-target" class="nav-link" data-scroll-target="#menyeimbangkan-data-tiap-target"><span class="header-section-number">1.3.2</span> <strong>Menyeimbangkan Data Tiap Target</strong></a></li>
+  <li><a href="#hasil-preprocessing-data" id="toc-hasil-preprocessing-data" class="nav-link" data-scroll-target="#hasil-preprocessing-data"><span class="header-section-number">1.3.3</span> <strong>Hasil Preprocessing Data</strong></a></li>
+  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection"><span class="header-section-number">1.3.4</span> <strong>Feature Selection</strong></a></li>
+  </ul></li>
+  <li><a href="#modelling" id="toc-modelling" class="nav-link" data-scroll-target="#modelling"><span class="header-section-number">1.4</span> MODELLING</a>
+  <ul class="collapse">
+  <li><a href="#load-dataset" id="toc-load-dataset" class="nav-link" data-scroll-target="#load-dataset"><span class="header-section-number">1.4.1</span> <strong>Load Dataset</strong></a></li>
+  <li><a href="#split-dataset" id="toc-split-dataset" class="nav-link" data-scroll-target="#split-dataset"><span class="header-section-number">1.4.2</span> <strong>Split Dataset</strong></a></li>
+  <li><a href="#grafik-dan-tingkat-kepentingannya" id="toc-grafik-dan-tingkat-kepentingannya" class="nav-link" data-scroll-target="#grafik-dan-tingkat-kepentingannya"><span class="header-section-number">1.4.3</span> Grafik dan tingkat kepentingannya</a></li>
+  </ul></li>
+  <li><a href="#data-preprocessing-1" id="toc-data-preprocessing-1" class="nav-link" data-scroll-target="#data-preprocessing-1"><span class="header-section-number">1.5</span> Data Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#menghapus-data-duplikat-1" id="toc-menghapus-data-duplikat-1" class="nav-link" data-scroll-target="#menghapus-data-duplikat-1"><span class="header-section-number">1.5.1</span> Menghapus Data Duplikat</a></li>
+  <li><a href="#menghapus-outlier" id="toc-menghapus-outlier" class="nav-link" data-scroll-target="#menghapus-outlier"><span class="header-section-number">1.5.2</span> Menghapus Outlier</a></li>
+  <li><a href="#menyeimbangkan-data-tiap-target-1" id="toc-menyeimbangkan-data-tiap-target-1" class="nav-link" data-scroll-target="#menyeimbangkan-data-tiap-target-1"><span class="header-section-number">1.5.3</span> Menyeimbangkan Data Tiap Target</a></li>
+  <li><a href="#menyeimbangkan-data-target-sesuai-jumlahnya-menggunakan-jumlah-pada-target-yang-paling-sedikit" id="toc-menyeimbangkan-data-target-sesuai-jumlahnya-menggunakan-jumlah-pada-target-yang-paling-sedikit" class="nav-link" data-scroll-target="#menyeimbangkan-data-target-sesuai-jumlahnya-menggunakan-jumlah-pada-target-yang-paling-sedikit"><span class="header-section-number">1.5.4</span> Menyeimbangkan data target sesuai jumlahnya menggunakan jumlah pada target yang paling sedikit</a></li>
+  <li><a href="#simpan-data-yang-telah-seimbang-di-dalam-database" id="toc-simpan-data-yang-telah-seimbang-di-dalam-database" class="nav-link" data-scroll-target="#simpan-data-yang-telah-seimbang-di-dalam-database"><span class="header-section-number">1.5.5</span> Simpan data yang telah seimbang di dalam database</a></li>
+  <li><a href="#eksplorasi-data-skoring-fitur" id="toc-eksplorasi-data-skoring-fitur" class="nav-link" data-scroll-target="#eksplorasi-data-skoring-fitur"><span class="header-section-number">1.5.6</span> Eksplorasi Data (Skoring Fitur)</a></li>
+  <li><a href="#split-data" id="toc-split-data" class="nav-link" data-scroll-target="#split-data"><span class="header-section-number">1.5.7</span> Split Data</a></li>
+  <li><a href="#normalisasi-data" id="toc-normalisasi-data" class="nav-link" data-scroll-target="#normalisasi-data"><span class="header-section-number">1.5.8</span> <strong>Normalisasi Data</strong></a></li>
+  <li><a href="#menggunakan-standarscaler-zscore" id="toc-menggunakan-standarscaler-zscore" class="nav-link" data-scroll-target="#menggunakan-standarscaler-zscore"><span class="header-section-number">1.5.9</span> Menggunakan Standarscaler (zscore)</a></li>
+  <li><a href="#membuat-model" id="toc-membuat-model" class="nav-link" data-scroll-target="#membuat-model"><span class="header-section-number">1.5.10</span> <strong>Membuat model</strong></a></li>
+  <li><a href="#menggunakan-minmaxscaler" id="toc-menggunakan-minmaxscaler" class="nav-link" data-scroll-target="#menggunakan-minmaxscaler"><span class="header-section-number">1.5.11</span> Menggunakan Minmaxscaler</a></li>
+  <li><a href="#split-dataset-1" id="toc-split-dataset-1" class="nav-link" data-scroll-target="#split-dataset-1"><span class="header-section-number">1.5.12</span> Split Dataset</a></li>
+  <li><a href="#normalisasi-data-1" id="toc-normalisasi-data-1" class="nav-link" data-scroll-target="#normalisasi-data-1"><span class="header-section-number">1.5.13</span> Normalisasi Data</a></li>
+  <li><a href="#simpan-model" id="toc-simpan-model" class="nav-link" data-scroll-target="#simpan-model"><span class="header-section-number">1.5.14</span> Simpan Model</a></li>
+  </ul></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation"><span class="header-section-number">1.6</span> EVALUATION</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">TUGAS KLASIFIKASI DATA PROYEK SAINS DATA - B</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Nama : Yulia Nanda Ivne Fara</p>
+<p>NIM : 210411100158</p>
+<p>Kelas : B</p>
+<section id="bussiness-understanding" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="bussiness-understanding"><span class="header-section-number">1.1</span> BUSSINESS UNDERSTANDING</h2>
+<section id="identifikasi-kasus" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="identifikasi-kasus"><span class="header-section-number">1.1.1</span> <strong>Identifikasi kasus</strong> :</h3>
+<p>Glioma merupakan penyakit tumor yang berasal dari pertumbuhan abnormal pada sel-sel glial, yaitu sel-sel yang mendukung dan melindungi sel-sel saraf di dalam otak dan sumsum tulang belakang,dapat dibagi menjadi 2 kategori utama yaitu Lower-Grade Gliomas (LGG) adalah jenis glioma yang memiliki pertumbuhan lebih lambat dan umumnya dianggap sebagai tumor yang kurang agresif dibandingkan dengan Glioblastoma Multiforme (GBM) merupakan glioma yang sangat agresif dan tumbuh dengan cepat.</p>
+</section>
+<section id="tujuan-proyek" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="tujuan-proyek"><span class="header-section-number">1.1.2</span> <strong>Tujuan Proyek</strong> :</h3>
+<p>Tujuan yaitu melakukan klasifikasi pasien menjadi dua kelompok berdasarkan ciri klinis dan molekuler/mutasi tertentu, yaitu apakah pasien tersebut memiliki Lower-Grade Glioma (LGG) atau Glioblastoma Multiforme (GBM). Ini merupakan tugas klasifikasi ingin mengidentifikasi subset gen mutasi dan gambaran klinis yang optimal untuk membantu memprediksi apakah seorang pasien memiliki LGG atau GBM</p>
+</section>
+</section>
+<section id="data-understanding" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="data-understanding"><span class="header-section-number">1.2</span> DATA UNDERSTANDING</h2>
+<p>Tahap Data Understanding merupakan tahap dimana kita perlu memahami data yang akan diolah. Adapun hal - hal yang perlu dilakukan nantinya untuk memahami dataset ini, yakni 1. Tentang data, mencakup : * Pengumpulan dataset * Pengenalan singkat mengenai data yang akan diolah 2. Mendeskripsikan data, mencakup : * analisa tipe data * deskripsi fitur 3. Eksplorasi data, mencakup : * Visualisasi data * Skoring fitur 4. Identifikasi kualitas data : * Identifikasi missing valye setiap fitur atau kolom * Identifikasi data duplikat * Identifikasi outlier (data aneh) * Identifikasi jumlah data (proporsi data perkelas -untuk mengetahui balancing dataset atau keseimbangan data per kelas)</p>
+<section id="about-data" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="about-data"><span class="header-section-number">1.2.1</span> <strong>About Data</strong></h3>
+<section id="pengumpulan-dataset" class="level4" data-number="1.2.1.1">
+<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="pengumpulan-dataset"><span class="header-section-number">1.2.1.1</span> <strong>Pengumpulan Dataset</strong></h4>
+<p>Pada tanggal 13 Desember 2022, data fitur klinis dan mutasi glioma dievaluasi, yang diperoleh melalui platform Kaggle, menjadi sumber informasi yang relevan</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'dataset.csv'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Grade</th>
+<th data-quarto-table-cell-role="th">Gender</th>
+<th data-quarto-table-cell-role="th">Age_at_diagnosis</th>
+<th data-quarto-table-cell-role="th">Race</th>
+<th data-quarto-table-cell-role="th">IDH1</th>
+<th data-quarto-table-cell-role="th">TP53</th>
+<th data-quarto-table-cell-role="th">ATRX</th>
+<th data-quarto-table-cell-role="th">PTEN</th>
+<th data-quarto-table-cell-role="th">EGFR</th>
+<th data-quarto-table-cell-role="th">CIC</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">FUBP1</th>
+<th data-quarto-table-cell-role="th">RB1</th>
+<th data-quarto-table-cell-role="th">NOTCH1</th>
+<th data-quarto-table-cell-role="th">BCOR</th>
+<th data-quarto-table-cell-role="th">CSMD3</th>
+<th data-quarto-table-cell-role="th">SMARCA4</th>
+<th data-quarto-table-cell-role="th">GRIN2A</th>
+<th data-quarto-table-cell-role="th">IDH2</th>
+<th data-quarto-table-cell-role="th">FAT4</th>
+<th data-quarto-table-cell-role="th">PDGFRA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>0</td>
+<td>51.30</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0</td>
+<td>0</td>
+<td>38.72</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0</td>
+<td>0</td>
+<td>35.17</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0</td>
+<td>1</td>
+<td>32.78</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>0</td>
+<td>31.51</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 24 columns</p>
+</div>
+</div>
+</div>
+</section>
+<section id="seputar-dataset" class="level4" data-number="1.2.1.2">
+<h4 data-number="1.2.1.2" class="anchored" data-anchor-id="seputar-dataset"><span class="header-section-number">1.2.1.2</span> <strong>Seputar dataset</strong></h4>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya data : "</span>, data.shape[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya data :  839</code></pre>
+</div>
+</div>
+</section>
+<section id="mendeskripsikan-fitur" class="level4" data-number="1.2.1.3">
+<h4 data-number="1.2.1.3" class="anchored" data-anchor-id="mendeskripsikan-fitur"><span class="header-section-number">1.2.1.3</span> <strong>Mendeskripsikan Fitur</strong></h4>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya kolom : "</span>, data.shape[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya kolom :  24</code></pre>
+</div>
+</div>
+<p><strong>Penjelasan fitur</strong></p>
+<ol type="1">
+<li>Grade (Tingkat Keparahan): Menunjukkan sejauh mana tumor otak (glioma) tumbuh dan seberapa ganas tumor tersebut, berdasarkan pada sistem penilaian tertentu. Skala gradasi berkisar dari I (tumor jinak) hingga IV (tumor ganas).</li>
+<li>Gender (Jenis Kelamin): Informasi tentang jenis kelamin pasien yang menderita glioma. Berguna untuk analisis epidemiologi dan pemahaman apakah terdapat perbedaan insidensi glioma antara laki-laki dan perempuan.</li>
+<li>(Usia pada Saat Diagnosa): Usia pasien saat glioma pertama kali didiagnosis. Penting karena dapat memengaruhi pilihan pengobatan dan prognosis glioma, mengingat glioma dapat muncul pada berbagai kelompok usia.</li>
+<li>Race (Ras): Informasi tentang ras pasien, membantu analisis untuk memahami apakah ada perbedaan kejadian glioma di antara kelompok etnis.</li>
+<li>IDH1 (Isocitrate Dehydrogenase 1): Menunjukkan status mutasi gen IDH1, yang sering terlibat dalam perkembangan glioma dan dapat memengaruhi karakteristik dan prognosis glioma.</li>
+<li>TP53 (Tumor Protein p53): Informasi tentang status gen TP53 dalam glioma, yang berperan sebagai gen penekan tumor dan mutasinya dapat memengaruhi pertumbuhan dan perkembangan glioma.</li>
+<li>ATRX (Alpha Thalassemia/Mental Retardation Syndrome X-Linked): Menyajikan status gen ATRX, terkait dengan glioma, dan mutasinya dapat memengaruhi sifat molekuler glioma.</li>
+<li>PTEN (Phosphatase and Tensin Homolog): Menunjukkan status gen PTEN yang berperan dalam perkembangan glioma dan mutasinya dapat memengaruhi pertumbuhan tumor otak.</li>
+<li>EGFR (Epidermal Growth Factor Receptor): Informasi tentang gen EGFR dalam konteks glioma. Amplifikasi atau mutasi gen EGFR dapat ditemukan dalam beberapa jenis glioma dan memengaruhi respons terhadap pengobatan.</li>
+<li>CIC (Capicua Transcriptional Repressor): Gen yang terlibat dalam regulasi pertumbuhan sel dan perkembangan glioma.</li>
+<li>MUC16 (Mucin 16): Merujuk kepada gen atau molekul tertentu terkait dengan glioma, memerlukan informasi lebih lanjut untuk penjelasan yang lebih spesifik.</li>
+<li>PIK3CA (Phosphatidylinositol-4,5-Bisphosphate 3-Kinase Catalytic Subunit Alpha): Menunjukkan informasi tentang gen PIK3CA yang terkait dengan glioma.</li>
+<li>NF1 (Neurofibromatosis Type 1): Informasi tentang gen NF1 dalam konteks glioma.</li>
+<li>PIK3R1 (Phosphoinositide-3-Kinase Regulatory Subunit 1): Menunjukkan informasi tentang gen PIK3R1.</li>
+<li>FUBP1 (Far Upstream Element Binding Protein 1): Gen yang terkait dengan regulasi transkripsi gen dalam konteks glioma.</li>
+<li>RB1 (Retinoblastoma 1): Menyajikan informasi tentang gen RB1, gen penekan tumor yang memengaruhi siklus sel dalam konteks glioma.</li>
+<li>NOTCH1 (Notch Receptor 1): Informasi tentang gen NOTCH1 dalam glioma, yang terlibat dalam regulasi pertumbuhan sel dan pembentukan jaringan.</li>
+<li>BCOR (BCL6 Corepressor): Merujuk kepada gen BCOR terkait dengan beberapa jenis kanker.</li>
+<li>CSMD3 (CUB and Sushi Multiple Domains 3): Merujuk kepada gen atau molekul terkait dengan glioma.</li>
+<li>SMARCA4 (SWI/SNF Related, Matrix Associated, Actin Dependent Regulator Of Chromatin, Subfamily A, Member 4): Menunjukkan informasi tentang gen SMARCA4 dalam keluarga gen regulasi kromatin.</li>
+<li>GRIN2A (Glutamate Ionotropic Receptor NMDA Type Subunit 2A): Merujuk kepada gen GRIN2A terkait dengan glioma.</li>
+<li>IDH2 (Isocitrate Dehydrogenase 2): Menunjukkan informasi tentang gen IDH2 yang terlibat dalam glioma dan sering dihubungkan dengan IDH1.</li>
+<li>FAT4 (FAT Atypical Cadherin 4): Merujuk kepada gen FAT4 terkait dengan beberapa jenis kanker.</li>
+<li>PDGFRA (Platelet-Derived Growth Factor Receptor Alpha): Menyajikan informasi tentang gen PDGFRA dalam konteks glioma, terlibat dalam jalur pertumbuhan sel dan pembentukan pembuluh darah.</li>
+</ol>
+</section>
+</section>
+<section id="mendeskripsikan-data" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="mendeskripsikan-data"><span class="header-section-number">1.2.2</span> <strong>Mendeskripsikan Data</strong></h3>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>Index(['Grade', 'Gender', 'Age_at_diagnosis', 'Race', 'IDH1', 'TP53', 'ATRX',
+       'PTEN', 'EGFR', 'CIC', 'MUC16', 'PIK3CA', 'NF1', 'PIK3R1', 'FUBP1',
+       'RB1', 'NOTCH1', 'BCOR', 'CSMD3', 'SMARCA4', 'GRIN2A', 'IDH2', 'FAT4',
+       'PDGFRA'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<section id="analisa-tipe-data" class="level4" data-number="1.2.2.1">
+<h4 data-number="1.2.2.1" class="anchored" data-anchor-id="analisa-tipe-data"><span class="header-section-number">1.2.2.1</span> <strong>Analisa Tipe data</strong></h4>
+<p>Dalam analisa data, terdapat beberapa tipe data yang sering ditemukan. Pemahaman tipe data ini penting karena berbagai jenis analisis statistik dan pemrosesan data dapat memerlukan pendekatan yang berbeda tergantung pada jenis data yang digunakan.</p>
+<p><strong>Berikut adalah Macam - Macam Data yang ada pada data ini.</strong></p>
+<ol type="1">
+<li>Tipe nominal
+<ul>
+<li>memiliki value 1 yang melambangkan ya dan 0 yang melambangkan tidak. &gt; Pada data ini mencakup fitur : <em>‘Grade’, ‘Gender’, ‘Race’, ‘IDH1’, ‘TP53’, ‘ATRX’, ‘PTEN’, ‘EGFR’, ‘CIC’, ‘MUC16’, ‘PIK3CA’, ‘NF1’, ‘PIK3R1’, ‘FUBP1’, ‘RB1’, ‘NOTCH1’, ‘BCOR’, ‘CSMD3’, ‘SMARCA4’, ‘GRIN2A’, ‘IDH2’, ‘FAT4’, ’PDGFRA</em></li>
+<li>mencakup tipe data numeric. &gt; yakni Age_at_diagnosis</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="deskripsi-fitur" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="deskripsi-fitur"><span class="header-section-number">1.2.3</span> Deskripsi Fitur</h3>
+<ol type="1">
+<li><p>Grade (Kelas Tingkat Keparahan Tumor) Deskripsi: Menunjukkan tingkat keparahan tumor. Contoh Nilai: &gt; 1 : Tumor dengan pertumbuhan lambat (Tingkat I)</p>
+<blockquote class="blockquote">
+<p>2 : Tumor dengan pertumbuhan yang lebih cepat (Tingkat II)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>3 : Tumor yang lebih agresif (Tingkat III)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>4 : Tumor ganas dengan pertumbuhan paling cepat (Tingkat IV)</p>
+</blockquote></li>
+<li><p>Gender (Jenis Kelamin) Deskripsi: Menunjukkan jenis kelamin pasien. Contoh Nilai: &gt; 0 : perempuan</p>
+<blockquote class="blockquote">
+<p>1 : laki - laki</p>
+</blockquote></li>
+<li><p>Age_at_diagnosis (Usia pada Saat Diagnosis Tumor) Deskripsi: Menunjukkan usia pasien pada saat diagnosis tumor. Contoh Nilai: &gt; 25: Pasien didiagnosis pada usia 25 tahun</p>
+<blockquote class="blockquote">
+<p>60: Pasien didiagnosis pada usia 60 tahun</p>
+</blockquote></li>
+<li><p>Race (Ras) Deskripsi: Menunjukkan ras pasien. Contoh Nilai: &gt; 0 : Tidak memiliki ras</p>
+<blockquote class="blockquote">
+<p>1 : memiliki ras</p>
+</blockquote></li>
+<li><p>IDH1 Deskripsi: Menunjukkan status mutasi pada gen IDH1, yang dapat menjadi petunjuk untuk jenis tumor tertentu, seperti glioma. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>TP53 Deskripsi: Menunjukkan status mutasi pada gen TP53, yang terlibat dalam pengawasan pertumbuhan sel dan dapat terlibat dalam perkembangan tumor. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>ATRX Deskripsi: Menunjukkan status mutasi pada gen ATRX, yang terlibat dalam regulasi panjang telomer dan stabilitas kromosom. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>PTEN Deskripsi: Menunjukkan status mutasi pada gen PTEN, yang berperan dalam pengawasan pertumbuhan sel dan dapat terlibat dalam perkembangan kanker. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>EGFR Deskripsi: Menunjukkan status mutasi pada gen EGFR, yang dapat terlibat dalam pertumbuhan sel dan sering diidentifikasi pada beberapa jenis kanker. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>CIC Deskripsi: Menunjukkan status mutasi pada gen CIC, yang terlibat dalam regulasi siklus sel dan dapat terlibat dalam perkembangan tumor. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>MUC16 Deskripsi: Menunjukkan status mutasi pada gen MUC16, yang dapat terlibat dalam perkembangan beberapa jenis kanker. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>PIK3CA Deskripsi: Menunjukkan status mutasi pada gen PIK3CA, yang terlibat dalam jalur sinyal pertumbuhan sel. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>NF1 Deskripsi: Menunjukkan status mutasi pada gen NF1, yang terlibat dalam regulasi pertumbuhan sel dan dapat terlibat dalam perkembangan tumor. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasii</p>
+</blockquote></li>
+<li><p>PIK3R1 Deskripsi: Menunjukkan status mutasi pada gen PIK3R1, yang terlibat dalam regulasi jalur PI3K-Akt. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>FUBP1 Deskripsi: Menunjukkan status mutasi pada gen FUBP1, yang dapat terlibat dalam regulasi ekspresi gen. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>RB1 Deskripsi: Menunjukkan status mutasi pada gen RB1, yang terlibat dalam regulasi siklus sel. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>NOTCH1 Deskripsi: Menunjukkan status mutasi pada gen NOTCH1, yang dapat terlibat dalam regulasi diferensiasi sel dan pertumbuhan. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>BCOR Deskripsi: Menunjukkan status mutasi pada gen BCOR, yang terlibat dalam regulasi ekspresi gen dan diferensiasi sel. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>CSMD3 Deskripsi: Menunjukkan status mutasi pada gen CSMD3, yang dapat terlibat dalam regulasi pertumbuhan sel. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>SMARCA4 Deskripsi: Menunjukkan status mutasi pada gen SMARCA4, yang terlibat dalam regulasi struktur kromosom dan pertumbuhan sel. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>GRIN2A Deskripsi: Menunjukkan status mutasi pada gen GRIN2A, yang terlibat dalam transmisi sinyal sel saraf. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>IDH2 Deskripsi: Menunjukkan status mutasi pada gen IDH2, yang dapat terkait dengan jenis tumor tertentu. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>FAT4 Deskripsi: Menunjukkan status mutasi pada gen FAT4, yang terlibat dalam regulasi pertumbuhan sel. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+<li><p>PDGFRA Deskripsi: Menunjukkan status mutasi pada gen PDGFRA, yang terlibat dalam pertumbuhan dan pemeliharaan sel. Contoh Nilai: &gt; 0 : Tidak ada mutasi</p>
+<blockquote class="blockquote">
+<p>1: Ada mutasi</p>
+</blockquote></li>
+</ol>
+</section>
+<section id="eksplorasi-data" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="eksplorasi-data"><span class="header-section-number">1.2.4</span> <strong>Eksplorasi Data</strong></h3>
+<section id="visualisasi-data" class="level4" data-number="1.2.4.1">
+<h4 data-number="1.2.4.1" class="anchored" data-anchor-id="visualisasi-data"><span class="header-section-number">1.2.4.1</span> <strong>Visualisasi Data</strong></h4>
+<p>Visualisasi data dilakukan untuk memudahkan kita memahami data. Melalui visualisasi data pula kita akan memperoleh informasi sebaran nilai dari dataset ini</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>data.hist(figsize<span class="op">=</span>(<span class="dv">14</span>,<span class="dv">14</span>))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.show</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="main_files/figure-html/cell-6-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="skoring-fitur" class="level4" data-number="1.2.4.2">
+<h4 data-number="1.2.4.2" class="anchored" data-anchor-id="skoring-fitur"><span class="header-section-number">1.2.4.2</span> <strong>Skoring Fitur</strong></h4>
+<p>Dengan melakukan skoring fitur, kita akan mengetahui yang mana fitur yang penting dan yang tidak. Hal ini dikarenakan tidak semua fitur dapat dijadikan ciri untuk melakukan klasifikasi. Dengan menentukan beberapa ciri terbaik akan menghasilkan akurasi yang sama atau lebih baik dibandingkan dengan menggunakan semua ciri serta menghemat waktu komputasi.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> SelectKBest, mutual_info_classif</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># memisahkan kolom fitur dan target</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>fitur <span class="op">=</span> data.drop(columns<span class="op">=</span>[<span class="st">'Grade'</span>], axis <span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> data[<span class="st">'Grade'</span>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Buat objek SelectKBest dengan mutual_info_classif sebagai fungsi skor</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>k_best <span class="op">=</span> SelectKBest(score_func<span class="op">=</span>mutual_info_classif, k<span class="op">=</span><span class="st">'all'</span>)  <span class="co"># 'all' berarti akan mempertahankan semua fitur</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Hitung skor fitur</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>k_best.fit(fitur, target)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> k_best.scores_</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Dapatkan nama fitur dari kolom data Anda</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>fitur_names <span class="op">=</span> fitur.columns</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Tampilkan skor fitur berserta namanya</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, (score, fitur_name) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(scores, fitur_names)):</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Fitur </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>fitur_name<span class="sc">}</span><span class="ss">, Skor: </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fitur 0: Gender, Skor: 0.0
+Fitur 1: Age_at_diagnosis, Skor: 0.1836302604370481
+Fitur 2: Race, Skor: 0.001083226817359284
+Fitur 3: IDH1, Skor: 0.29916352355341314
+Fitur 4: TP53, Skor: 0.004332139019691539
+Fitur 5: ATRX, Skor: 0.028339027312104026
+Fitur 6: PTEN, Skor: 0.07035477153576664
+Fitur 7: EGFR, Skor: 0.019006818303878292
+Fitur 8: CIC, Skor: 0.05872220363351821
+Fitur 9: MUC16, Skor: 0.049386808646663116
+Fitur 10: PIK3CA, Skor: 0.0
+Fitur 11: NF1, Skor: 0.0
+Fitur 12: PIK3R1, Skor: 0.006321600145554607
+Fitur 13: FUBP1, Skor: 0.02634246570829135
+Fitur 14: RB1, Skor: 0.01660825390759091
+Fitur 15: NOTCH1, Skor: 0.0
+Fitur 16: BCOR, Skor: 0.0
+Fitur 17: CSMD3, Skor: 0.0
+Fitur 18: SMARCA4, Skor: 0.005637498408886277
+Fitur 19: GRIN2A, Skor: 0.031420500403958496
+Fitur 20: IDH2, Skor: 0.0058230458756221015
+Fitur 21: FAT4, Skor: 0.0
+Fitur 22: PDGFRA, Skor: 0.0</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tampilkan skor fitur dalam grafik</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.bar(fitur_names, scores)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Nama Fitur"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Skor Fitur"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Skor Fitur SelectKBest"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="main_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="mengidentifikasi-kualitas-data" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="mengidentifikasi-kualitas-data"><span class="header-section-number">1.2.5</span> <strong>Mengidentifikasi Kualitas Data</strong></h3>
+<section id="identifikasi-missing-value" class="level4" data-number="1.2.5.1">
+<h4 data-number="1.2.5.1" class="anchored" data-anchor-id="identifikasi-missing-value"><span class="header-section-number">1.2.5.1</span> <strong>Identifikasi missing value</strong></h4>
+<p>Identifikasi nilai yang hilang (missing value) adalah proses untuk menemukan dan mengenali keberadaan nilai yang tidak ada atau kosong dalam suatu dataset. Langkah-langkah umum untuk mengidentifikasi missing value melibatkan: 1. Pemeriksaan Visual: Tinjau dataset secara visual, terutama jika ukurannya tidak terlalu besar. Identifikasi apakah ada nilai yang kosong atau tidak biasa. 2. Statistik Deskriptif: Gunakan metode statistik deskriptif seperti fungsi mean, median, dan std deviation untuk melihat apakah terdapat nilai yang tidak valid atau tidak sesuai dengan harapan. 3. Pemetaan Nilai yang Hilang: Representasikan missing value dengan visualisasi, seperti heatmap, untuk memahami pola distribusi nilai yang hilang dalam dataset. 4. Fungsi atau Metode Khusus: Gunakan fungsi atau metode khusus dalam bahasa pemrograman atau perangkat lunak analisis data untuk mengidentifikasi secara otomatis nilai yang hilang, seperti fungsi isna() atau isnull() dalam Python. 5. Analisis Korelasi: Evaluasi korelasi antara variabel yang memiliki missing value dengan variabel lain dalam dataset untuk memahami apakah ada pola atau hubungan yang dapat membantu dalam pengelolaan missing value.</p>
+<p>Penanganan Missing Value : Jika atribut tersebut memiliki banyak missing value, maka atribut tersebut perlu dihapus dari dataset. Namun jika hanya terdapat beberapa data yang missing value bisa dilakukan drop dari baris yang memiliki missing value atau mengisinya dengan rata - rata nilai pada atribut yang bersangkutan.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mengecek apakah ada nilai yang hilang dalam setiap kolom</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>missing_values <span class="op">=</span> data.isna().<span class="bu">any</span>()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># menampilkan hasil</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Apakah ada nilai yang hilang dalam setiap kolom:"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(missing_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Apakah ada nilai yang hilang dalam setiap kolom:
+Grade               False
+Gender              False
+Age_at_diagnosis    False
+Race                False
+IDH1                False
+TP53                False
+ATRX                False
+PTEN                False
+EGFR                False
+CIC                 False
+MUC16               False
+PIK3CA              False
+NF1                 False
+PIK3R1              False
+FUBP1               False
+RB1                 False
+NOTCH1              False
+BCOR                False
+CSMD3               False
+SMARCA4             False
+GRIN2A              False
+IDH2                False
+FAT4                False
+PDGFRA              False
+dtype: bool</code></pre>
+</div>
+</div>
+<p>Noted : tidak ada <em>missing value</em> pada data</p>
+</section>
+<section id="identifikasi-duplikat-data" class="level4" data-number="1.2.5.2">
+<h4 data-number="1.2.5.2" class="anchored" data-anchor-id="identifikasi-duplikat-data"><span class="header-section-number">1.2.5.2</span> <strong>Identifikasi Duplikat Data</strong></h4>
+<p>Duplikat data merupakan suatu kondisi dimana suatu baris memiliki nilai yang sama persis di semua kolom pada baris lainnya. Adanya data yang redundan (berulang) dapat mengganggu hasil analisis dan menghasilkan akurasi yang tidak akurat. Untuk mengecek adanya duplikat data, maka digunakan fungsi <em>dupicated()</em></p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>jumlah_duplikat <span class="op">=</span> data.duplicated().<span class="bu">sum</span>()</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan jumlah data yang duplikat</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah data yang duplikat:"</span>, jumlah_duplikat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah data yang duplikat: 1</code></pre>
+</div>
+</div>
+<p>Noted : terdapat 1 data duplikat</p>
+</section>
+<section id="identifikasi-outlier" class="level4" data-number="1.2.5.3">
+<h4 data-number="1.2.5.3" class="anchored" data-anchor-id="identifikasi-outlier"><span class="header-section-number">1.2.5.3</span> <strong>Identifikasi Outlier</strong></h4>
+<p>Outlier, pada dasarnya, adalah suatu nilai yang secara signifikan menonjol dan berbeda jauh dari nilai-nilai lain dalam suatu set data. Kadang-kadang disebut sebagai nilai ekstrem, outlier tidak hanya mencolok tetapi juga memiliki sifat yang tidak representatif terhadap fenomena sekitarnya. Deteksi outlier menjadi penting dalam analisis data, karena keberadaannya dapat mengganggu hasil analisis keseluruhan dan memengaruhi kesimpulan yang dapat diambil dari dataset tersebut</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> LocalOutlierFactor</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Menggunakan Local Outlier Factor</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> LocalOutlierFactor(n_neighbors<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>outlier_scores <span class="op">=</span> lof.fit_predict(data)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>outliers <span class="op">=</span> data[outlier_scores <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya outlier : "</span>, outliers.shape[<span class="dv">0</span>])</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>data_bersih <span class="op">=</span> data[outlier_scores <span class="op">!=</span> <span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sisa data : "</span>, data_bersih.shape[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya outlier :  29
+Sisa data :  810</code></pre>
+</div>
+</div>
+</section>
+<section id="identifikasi-jumlah-data" class="level4" data-number="1.2.5.4">
+<h4 data-number="1.2.5.4" class="anchored" data-anchor-id="identifikasi-jumlah-data"><span class="header-section-number">1.2.5.4</span> <strong>Identifikasi Jumlah Data</strong></h4>
+<p>Dengan mengetahui proporsi data untuk masing - masing label, kita bisa mengetahui seberapa berbeda jumlah data di tiap - tiap label. Jika jumlah data antar label memiliki perbedaan yang sangat jauh maka akan mempengaruhi akurasi serta hasil klasifikasi sehingga nantinya perlu dilakukan penyeimbangan jumlah data di tiap labelnya.</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghitung jumlah target pada data tanpa outlier</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>target_no_outliers <span class="op">=</span> data[<span class="st">'Grade'</span>].value_counts()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah data pada tiap target :"</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(target_no_outliers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah data pada tiap target :
+Grade
+0    487
+1    352
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="hasil-analisa-pada-data-understanding" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="hasil-analisa-pada-data-understanding"><span class="header-section-number">1.2.6</span> <strong>Hasil Analisa Pada Data Understanding :</strong></h3>
+<ol type="1">
+<li>Data tidak memiliki <em>missing values</em></li>
+<li>Data memiliki 1 data redundan</li>
+<li>Data memiliki 29 outlier</li>
+</ol>
+</section>
+</section>
+<section id="data-preprocessing" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="data-preprocessing"><span class="header-section-number">1.3</span> DATA PREPROCESSING</h2>
+<p>Setelah memahami data, akan dilakukan tahap preprocessing untuk menangani masalah pada data yang sudah didefinisikan pada data understanding, yakni. 1. Menghapus Data Duplikat 2. Menghapus Outlier 3. Menyeimbangkan proporsi data tiap target</p>
+<p>Setelah data siap, akan dilakukan skoring fitur kembali.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'dataset.csv'</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Grade</th>
+<th data-quarto-table-cell-role="th">Gender</th>
+<th data-quarto-table-cell-role="th">Age_at_diagnosis</th>
+<th data-quarto-table-cell-role="th">Race</th>
+<th data-quarto-table-cell-role="th">IDH1</th>
+<th data-quarto-table-cell-role="th">TP53</th>
+<th data-quarto-table-cell-role="th">ATRX</th>
+<th data-quarto-table-cell-role="th">PTEN</th>
+<th data-quarto-table-cell-role="th">EGFR</th>
+<th data-quarto-table-cell-role="th">CIC</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">FUBP1</th>
+<th data-quarto-table-cell-role="th">RB1</th>
+<th data-quarto-table-cell-role="th">NOTCH1</th>
+<th data-quarto-table-cell-role="th">BCOR</th>
+<th data-quarto-table-cell-role="th">CSMD3</th>
+<th data-quarto-table-cell-role="th">SMARCA4</th>
+<th data-quarto-table-cell-role="th">GRIN2A</th>
+<th data-quarto-table-cell-role="th">IDH2</th>
+<th data-quarto-table-cell-role="th">FAT4</th>
+<th data-quarto-table-cell-role="th">PDGFRA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>0</td>
+<td>51.30</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0</td>
+<td>0</td>
+<td>38.72</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0</td>
+<td>0</td>
+<td>35.17</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0</td>
+<td>1</td>
+<td>32.78</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>0</td>
+<td>31.51</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 24 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rincian dataset (banyak data dan kolom)</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya data : "</span>, data.shape[<span class="dv">0</span>])</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya kolom : "</span>, data.shape[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya data :  839
+Banyaknya kolom :  24</code></pre>
+</div>
+</div>
+<section id="menghapus-data-duplikat" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="menghapus-data-duplikat"><span class="header-section-number">1.3.1</span> <strong>Menghapus Data Duplikat</strong></h3>
+<p>Duplikat data merupakan suatu kondisi dimana suatu baris memiliki nilai yang sama persis di semua kolom pada baris lainnya. Adanya data yang redundan (berulang) dapat mengganggu hasil analisis dan menghasilkan akurasi yang tidak akurat.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghapus data yang duplikat</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>data_bersih <span class="op">=</span> data.drop_duplicates()</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya sisa data : "</span>, data_bersih.shape[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya sisa data :  838</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> LocalOutlierFactor</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Menggunakan Local Outlier Factor</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> LocalOutlierFactor(n_neighbors<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>outlier_scores <span class="op">=</span> lof.fit_predict(data_bersih)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>data_oke <span class="op">=</span> data_bersih[outlier_scores <span class="op">!=</span> <span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sisa data : "</span>, data_oke.shape[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sisa data :  810</code></pre>
+</div>
+</div>
+</section>
+<section id="menyeimbangkan-data-tiap-target" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="menyeimbangkan-data-tiap-target"><span class="header-section-number">1.3.2</span> <strong>Menyeimbangkan Data Tiap Target</strong></h3>
+<p>Dengan mengetahui proporsi data untuk masing - masing label, kita bisa mengetahui seberapa berbeda jumlah data di tiap - tiap label. Jika jumlah data antar label memiliki perbedaan yang sangat jauh maka akan mempengaruhi akurasi serta hasil klasifikasi sehingga nantinya perlu dilakukan penyeimbangan jumlah data di tiap labelnya.</p>
+<section id="proporsi-jumlah-data-di-tiap-label" class="level4" data-number="1.3.2.1">
+<h4 data-number="1.3.2.1" class="anchored" data-anchor-id="proporsi-jumlah-data-di-tiap-label"><span class="header-section-number">1.3.2.1</span> <strong>Proporsi Jumlah Data Di Tiap Label</strong></h4>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>fitur <span class="op">=</span> data_oke.drop(columns<span class="op">=</span>[<span class="st">'Grade'</span>])</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> data_oke[<span class="st">'Grade'</span>]</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>target.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>Grade
+0    468
+1    342
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<section id="visualisasi-banyaknya-data-di-tiap-label" class="level5" data-number="1.3.2.1.1">
+<h5 data-number="1.3.2.1.1" class="anchored" data-anchor-id="visualisasi-banyaknya-data-di-tiap-label"><span class="header-section-number">1.3.2.1.1</span> <strong>Visualisasi banyaknya data di tiap label</strong></h5>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>value_counts <span class="op">=</span> target.value_counts()</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>plt.pie(value_counts, labels<span class="op">=</span>value_counts.index, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribusi Kelas Target'</span>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="main_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="penyeimbangan-jumlah-atau-proporsi-data" class="level4" data-number="1.3.2.2">
+<h4 data-number="1.3.2.2" class="anchored" data-anchor-id="penyeimbangan-jumlah-atau-proporsi-data"><span class="header-section-number">1.3.2.2</span> <strong>Penyeimbangan jumlah atau proporsi data</strong></h4>
+<p>Perbandingan proporsi data tiap target sangat jauh sehingga untuk menghemat waktu komputasi output antar target akan diseimbangkan menggunakan metode UnderSampling. Undersampling adalah teknik untuk mengurangi jumlah data pada kelas mayoritas sehingga jumlahnya setara dengan kelas minoritas.</p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.under_sampling <span class="im">import</span> RandomUnderSampler</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>smote <span class="op">=</span> RandomUnderSampler()</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>fitur_seimbang, target_seimbang <span class="op">=</span> smote.fit_resample(fitur, target)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah sampel setelah diseimbangkan : "</span>)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(target_seimbang.value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah sampel setelah diseimbangkan : 
+Grade
+0    342
+1    342
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<section id="visualisasi-banyaknya-data-di-tiap-label-1" class="level5" data-number="1.3.2.2.1">
+<h5 data-number="1.3.2.2.1" class="anchored" data-anchor-id="visualisasi-banyaknya-data-di-tiap-label-1"><span class="header-section-number">1.3.2.2.1</span> <strong>Visualisasi banyaknya data di tiap label</strong></h5>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot distribusi kelas target sebelum penyeimbangan</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>target_tidak_seimbang <span class="op">=</span> target.value_counts()</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].pie(target_tidak_seimbang, labels<span class="op">=</span>target_tidak_seimbang.index, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span>)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">'Distribusi Kelas Target Sebelum Diseimbangkan'</span>)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].axis(<span class="st">'equal'</span>)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot distribusi kelas target setelah penyeimbangan</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>target_sudah_seimbang <span class="op">=</span> target_seimbang.value_counts()</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].pie(target_sudah_seimbang, labels<span class="op">=</span>target_sudah_seimbang.index, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span>)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">'Distribusi Kelas Target Yang Telah Diseimbangkan'</span>)</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].axis(<span class="st">'equal'</span>)</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="main_files/figure-html/cell-20-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="hasil-preprocessing-data" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="hasil-preprocessing-data"><span class="header-section-number">1.3.3</span> <strong>Hasil Preprocessing Data</strong></h3>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat DataFrame dari fitur dan target yang telah seimbang</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>data_seimbang <span class="op">=</span> pd.concat([fitur_seimbang, target_seimbang], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Menyimpan DataFrame ke dalam file CSV</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>data_seimbang.to_csv(<span class="st">'data_seimbang1.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="feature-selection" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="feature-selection"><span class="header-section-number">1.3.4</span> <strong>Feature Selection</strong></h3>
+<p>Dengan melakukan skoring fitur, kita akan mengetahui yang mana fitur yang penting dan yang tidak. Hal ini dikarenakan tidak semua fitur dapat dijadikan ciri untuk melakukan klasifikasi. Dengan menentukan beberapa ciri terbaik akan menghasilkan akurasi yang sama atau lebih baik dibandingkan dengan menggunakan semua ciri serta menghemat waktu komputasi.</p>
+<p>Skor informasi menggunakan <em>mutual_info_classif</em> berguna untuk mengevaluasi seberapa informatif suatu fitur terhadap variabel target. Skoring fitur menggunakan <em>mutual_info_classif</em> dapat mengukur seberapa banyak informasi dari variabel independen (fitur) yang terdapat pada variabel dependen (target) dalam dataset. Secara spesifik, skor ini menunjukkan seberapa banyak informasi dari suatu fitur yang dapat membantu dalam memprediksi target. <strong>Semakin tinggi skornya, semakin informatif fitur tersebut terhadap variabel target.</strong></p>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> SelectKBest, mutual_info_classif</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Buat objek SelectKBest dengan mutual_info_classif sebagai fungsi skor</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>k_best <span class="op">=</span> SelectKBest(score_func<span class="op">=</span>mutual_info_classif, k<span class="op">=</span><span class="st">'all'</span>)  <span class="co"># 'all' berarti akan mempertahankan semua fitur</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Hitung skor fitur</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>k_best.fit(fitur_seimbang, target_seimbang)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> k_best.scores_</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Dapatkan nama fitur dari kolom data Anda</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>fitur_names <span class="op">=</span> fitur.columns</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Tampilkan skor fitur berserta namanya</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, (score, fitur_name) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(scores, fitur_names)):</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Fitur </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>fitur_name<span class="sc">}</span><span class="ss">, Skor: </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fitur 0: Gender, Skor: 0.0
+Fitur 1: Age_at_diagnosis, Skor: 0.1844928943766866
+Fitur 2: Race, Skor: 0.0
+Fitur 3: IDH1, Skor: 0.3037068691204612
+Fitur 4: TP53, Skor: 0.0114767531002542
+Fitur 5: ATRX, Skor: 0.07239657961576484
+Fitur 6: PTEN, Skor: 0.05205249513954713
+Fitur 7: EGFR, Skor: 0.0
+Fitur 8: CIC, Skor: 0.0634755402890419
+Fitur 9: MUC16, Skor: 0.0
+Fitur 10: PIK3CA, Skor: 0.021167499071111262
+Fitur 11: NF1, Skor: 0.01522729428307068
+Fitur 12: PIK3R1, Skor: 0.0
+Fitur 13: FUBP1, Skor: 0.04306986744809804
+Fitur 14: RB1, Skor: 0.034603512687797267
+Fitur 15: NOTCH1, Skor: 0.05390188520546868
+Fitur 16: BCOR, Skor: 0.004819449013254706
+Fitur 17: CSMD3, Skor: 0.021559414485805117
+Fitur 18: SMARCA4, Skor: 0.0
+Fitur 19: GRIN2A, Skor: 0.0
+Fitur 20: IDH2, Skor: 0.0
+Fitur 21: FAT4, Skor: 0.005786907567380206
+Fitur 22: PDGFRA, Skor: 0.0</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tampilkan skor fitur dalam grafik</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>plt.bar(fitur_names, scores)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Nama Fitur"</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Skor Fitur"</span>)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Skor Fitur SelectKBest"</span>)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="main_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="modelling" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="modelling"><span class="header-section-number">1.4</span> MODELLING</h2>
+<section id="load-dataset" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="load-dataset"><span class="header-section-number">1.4.1</span> <strong>Load Dataset</strong></h3>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'dataset.csv'</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Grade</th>
+<th data-quarto-table-cell-role="th">Gender</th>
+<th data-quarto-table-cell-role="th">Age_at_diagnosis</th>
+<th data-quarto-table-cell-role="th">Race</th>
+<th data-quarto-table-cell-role="th">IDH1</th>
+<th data-quarto-table-cell-role="th">TP53</th>
+<th data-quarto-table-cell-role="th">ATRX</th>
+<th data-quarto-table-cell-role="th">PTEN</th>
+<th data-quarto-table-cell-role="th">EGFR</th>
+<th data-quarto-table-cell-role="th">CIC</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">FUBP1</th>
+<th data-quarto-table-cell-role="th">RB1</th>
+<th data-quarto-table-cell-role="th">NOTCH1</th>
+<th data-quarto-table-cell-role="th">BCOR</th>
+<th data-quarto-table-cell-role="th">CSMD3</th>
+<th data-quarto-table-cell-role="th">SMARCA4</th>
+<th data-quarto-table-cell-role="th">GRIN2A</th>
+<th data-quarto-table-cell-role="th">IDH2</th>
+<th data-quarto-table-cell-role="th">FAT4</th>
+<th data-quarto-table-cell-role="th">PDGFRA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>0</td>
+<td>51.30</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0</td>
+<td>0</td>
+<td>38.72</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0</td>
+<td>0</td>
+<td>35.17</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0</td>
+<td>1</td>
+<td>32.78</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>0</td>
+<td>31.51</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 24 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Banyak data dan kolom</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya data : "</span>, data.shape[<span class="dv">0</span>])</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya kolom : "</span>, data.shape[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya data :  839
+Banyaknya kolom :  24</code></pre>
+</div>
+</div>
+</section>
+<section id="split-dataset" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="split-dataset"><span class="header-section-number">1.4.2</span> <strong>Split Dataset</strong></h3>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># melakukan pembagian dataset, dataset dibagi menjadi 80% data training dan 20% data testing</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>fitur_train, fitur_test, target_train, target_test <span class="op">=</span> train_test_split(fitur, target, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="grafik-dan-tingkat-kepentingannya" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="grafik-dan-tingkat-kepentingannya"><span class="header-section-number">1.4.3</span> Grafik dan tingkat kepentingannya</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tampilkan skor fitur dalam grafik</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>plt.bar(fitur_names, scores)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat label pada sumbu x dan y, serta judul pada grafiknya</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Nama Fitur"</span>)</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Skor Fitur"</span>)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Skor Fitur SelectKBest"</span>)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Menambahkan rotasi pada sumbu x</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="data-preprocessing-1" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="data-preprocessing-1"><span class="header-section-number">1.5</span> Data Preprocessing</h2>
+<p>Setelah memahami data, akan dilakukan tahap preprocessing untuk menangani masalah pada data yang sudah didefinisikan pada data understanding, yakni. 1. Menghapus Data Duplikat 2. Menghapus Outlier 3. Menyeimbangkan proporsi data tiap target</p>
+<p>Setelah data siap, akan dilakukan : 1. Skoring tiap fitur kembali 2. Normalisasi Data 3. Eksplorasi Model</p>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'dataset.csv'</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Grade</th>
+<th data-quarto-table-cell-role="th">Gender</th>
+<th data-quarto-table-cell-role="th">Age_at_diagnosis</th>
+<th data-quarto-table-cell-role="th">Race</th>
+<th data-quarto-table-cell-role="th">IDH1</th>
+<th data-quarto-table-cell-role="th">TP53</th>
+<th data-quarto-table-cell-role="th">ATRX</th>
+<th data-quarto-table-cell-role="th">PTEN</th>
+<th data-quarto-table-cell-role="th">EGFR</th>
+<th data-quarto-table-cell-role="th">CIC</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">FUBP1</th>
+<th data-quarto-table-cell-role="th">RB1</th>
+<th data-quarto-table-cell-role="th">NOTCH1</th>
+<th data-quarto-table-cell-role="th">BCOR</th>
+<th data-quarto-table-cell-role="th">CSMD3</th>
+<th data-quarto-table-cell-role="th">SMARCA4</th>
+<th data-quarto-table-cell-role="th">GRIN2A</th>
+<th data-quarto-table-cell-role="th">IDH2</th>
+<th data-quarto-table-cell-role="th">FAT4</th>
+<th data-quarto-table-cell-role="th">PDGFRA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>0</td>
+<td>51.30</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0</td>
+<td>0</td>
+<td>38.72</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0</td>
+<td>0</td>
+<td>35.17</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0</td>
+<td>1</td>
+<td>32.78</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>0</td>
+<td>31.51</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 24 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Banyak data dan kolom</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya data : "</span>, data.shape[<span class="dv">0</span>])</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya kolom : "</span>, data.shape[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya data :  839
+Banyaknya kolom :  24</code></pre>
+</div>
+</div>
+<section id="menghapus-data-duplikat-1" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="menghapus-data-duplikat-1"><span class="header-section-number">1.5.1</span> Menghapus Data Duplikat</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghapus data yang duplikat</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>data_bersih <span class="op">=</span> data.drop_duplicates()</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya sisa data : "</span>, data_bersih.shape[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="menghapus-outlier" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="menghapus-outlier"><span class="header-section-number">1.5.2</span> Menghapus Outlier</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> LocalOutlierFactor</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Menggunakan Local Outlier Factor</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>lof <span class="op">=</span> LocalOutlierFactor(n_neighbors<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>outlier_scores <span class="op">=</span> lof.fit_predict(data)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>data_bersih <span class="op">=</span> data[outlier_scores <span class="op">!=</span> <span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sisa data : "</span>, data_bersih.shape[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="menyeimbangkan-data-tiap-target-1" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="menyeimbangkan-data-tiap-target-1"><span class="header-section-number">1.5.3</span> Menyeimbangkan Data Tiap Target</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>fitur <span class="op">=</span> data_bersih.drop(columns<span class="op">=</span>[<span class="st">'Grade'</span>])</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> data_bersih[<span class="st">'Grade'</span>]</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>target.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="menyeimbangkan-data-target-sesuai-jumlahnya-menggunakan-jumlah-pada-target-yang-paling-sedikit" class="level3" data-number="1.5.4">
+<h3 data-number="1.5.4" class="anchored" data-anchor-id="menyeimbangkan-data-target-sesuai-jumlahnya-menggunakan-jumlah-pada-target-yang-paling-sedikit"><span class="header-section-number">1.5.4</span> Menyeimbangkan data target sesuai jumlahnya menggunakan jumlah pada target yang paling sedikit</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.under_sampling <span class="im">import</span> RandomUnderSampler</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>smote <span class="op">=</span> RandomUnderSampler()</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>fitur_seimbang, target_seimbang <span class="op">=</span> smote.fit_resample(fitur, target)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah sampel setelah diseimbangkan : "</span>)</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(target_seimbang.value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="simpan-data-yang-telah-seimbang-di-dalam-database" class="level3" data-number="1.5.5">
+<h3 data-number="1.5.5" class="anchored" data-anchor-id="simpan-data-yang-telah-seimbang-di-dalam-database"><span class="header-section-number">1.5.5</span> Simpan data yang telah seimbang di dalam database</h3>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat DataFrame dari fitur dan target yang telah seimbang</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>data_seimbang <span class="op">=</span> pd.concat([fitur_seimbang, target_seimbang], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Menyimpan DataFrame ke dalam file CSV</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>data_seimbang.to_csv(<span class="st">'Data_Seimbang.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>fitur <span class="op">=</span> data_seimbang.drop(columns<span class="op">=</span>[<span class="st">'Grade'</span>])</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> data_seimbang[<span class="st">'Grade'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="eksplorasi-data-skoring-fitur" class="level3" data-number="1.5.6">
+<h3 data-number="1.5.6" class="anchored" data-anchor-id="eksplorasi-data-skoring-fitur"><span class="header-section-number">1.5.6</span> Eksplorasi Data (Skoring Fitur)</h3>
+<p>Melakukan skoring fitur dengan presentase kepentingannya</p>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> SelectKBest, mutual_info_classif</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Buat objek SelectKBest dengan mutual_info_classif sebagai fungsi skor</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>k_best <span class="op">=</span> SelectKBest(score_func<span class="op">=</span>mutual_info_classif, k<span class="op">=</span><span class="st">'all'</span>)  <span class="co"># 'all' berarti akan mempertahankan semua fitur</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Hitung skor fitur</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>k_best.fit(fitur, target)</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> k_best.scores_</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Dapatkan nama fitur dari kolom data Anda</span></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>fitur_names <span class="op">=</span> fitur.columns</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Tampilkan skor fitur berserta namanya</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, (score, fitur_name) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(scores, fitur_names)):</span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Fitur </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>fitur_name<span class="sc">}</span><span class="ss">, Skor: </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fitur 0: Gender, Skor: 0.0
+Fitur 1: Age_at_diagnosis, Skor: 0.18672449077849174
+Fitur 2: Race, Skor: 0.0010600399767952684
+Fitur 3: IDH1, Skor: 0.2919775839551344
+Fitur 4: TP53, Skor: 0.03145111467220385
+Fitur 5: ATRX, Skor: 0.049446107986429455
+Fitur 6: PTEN, Skor: 0.0814082771389042
+Fitur 7: EGFR, Skor: 0.054840022727111526
+Fitur 8: CIC, Skor: 0.07971535922808393
+Fitur 9: MUC16, Skor: 0.0
+Fitur 10: PIK3CA, Skor: 0.0
+Fitur 11: NF1, Skor: 0.0
+Fitur 12: PIK3R1, Skor: 0.0
+Fitur 13: FUBP1, Skor: 0.009983749997428015
+Fitur 14: RB1, Skor: 0.02414717554759105
+Fitur 15: NOTCH1, Skor: 0.0
+Fitur 16: BCOR, Skor: 0.003217834219356064
+Fitur 17: CSMD3, Skor: 0.016862161428498057
+Fitur 18: SMARCA4, Skor: 0.0
+Fitur 19: GRIN2A, Skor: 0.0
+Fitur 20: IDH2, Skor: 0.0
+Fitur 21: FAT4, Skor: 0.0
+Fitur 22: PDGFRA, Skor: 0.011853691523513898</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tampilkan skor fitur dalam grafik</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>plt.bar(fitur_names, scores)</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat label pada sumbu x dan y, serta judul pada grafiknya</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Nama Fitur"</span>)</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Skor Fitur"</span>)</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Skor Fitur SelectKBest"</span>)</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Menambahkan rotasi pada sumbu x</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="split-data" class="level3" data-number="1.5.7">
+<h3 data-number="1.5.7" class="anchored" data-anchor-id="split-data"><span class="header-section-number">1.5.7</span> Split Data</h3>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># melakukan pembagian dataset, dataset dibagi menjadi 80% data training dan 20% data testing</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>fitur_train, fitur_test, target_train, target_test <span class="op">=</span> train_test_split(fitur, target, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya fitur  : "</span>, fitur_train.shape[<span class="dv">1</span>])</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya data latih : "</span>, fitur_train.shape[<span class="dv">0</span>])</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya data testing : "</span>, fitur_test.shape[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya fitur  :  23
+Banyaknya data latih :  648
+Banyaknya data testing :  162</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>target_train.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>Grade
+0    377
+1    271
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>value_counts <span class="op">=</span> target_train.value_counts()</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>plt.pie(value_counts, labels<span class="op">=</span>value_counts.index, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span>)</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Perbandingan Jumlah Data Tiap Target'</span>)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="main_files/figure-html/cell-41-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="normalisasi-data" class="level3" data-number="1.5.8">
+<h3 data-number="1.5.8" class="anchored" data-anchor-id="normalisasi-data"><span class="header-section-number">1.5.8</span> <strong>Normalisasi Data</strong></h3>
+</section>
+<section id="menggunakan-standarscaler-zscore" class="level3" data-number="1.5.9">
+<h3 data-number="1.5.9" class="anchored" data-anchor-id="menggunakan-standarscaler-zscore"><span class="header-section-number">1.5.9</span> Menggunakan Standarscaler (zscore)</h3>
+<p>Rumus untuk mencari Zscore: <span class="math display">\[ Z = \frac {X – μ}{σ} \]</span></p>
+<p>Penjelasan rumusnya: - Z = nilai standar - X = nilai teramati - μ = mean sampel - σ = simpangan baku sampel</p>
+<p>Rumus untuk standar deviasi sendiri sebagai berikut.<br>
+<span class="math display">\[ s = \sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n - 1}} \]</span></p>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co"># menentukan lokasi file pickle akan disimpan</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">'zscore_scaler.pkl'</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat dan melatih objek StandardScaler</span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>zscore_scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>zscore_scaler.fit(fitur_train)</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a><span class="co"># menyimpan model ke dalam file pickle</span></span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>    pickle.dump(zscore_scaler, <span class="bu">file</span>)</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a><span class="co"># memanggil kembali model normalisasi zscore dari file pickle</span></span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'rb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a>    zscore_scaler <span class="op">=</span> pickle.load(<span class="bu">file</span>)</span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a><span class="co"># menerapkan normalisasi zscore pada data training</span></span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a>zscore_training <span class="op">=</span> zscore_scaler.transform(fitur_train)</span>
+<span id="cb61-21"><a href="#cb61-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-22"><a href="#cb61-22" aria-hidden="true" tabindex="-1"></a><span class="co"># menerapkan normalisasi zscore pada data testing</span></span>
+<span id="cb61-23"><a href="#cb61-23" aria-hidden="true" tabindex="-1"></a>zscore_testing <span class="op">=</span> zscore_scaler.transform(fitur_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>zscore_scaler</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="47">
+<style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>StandardScaler()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div>
+</div>
+</div>
+</section>
+<section id="membuat-model" class="level3" data-number="1.5.10">
+<h3 data-number="1.5.10" class="anchored" data-anchor-id="membuat-model"><span class="header-section-number">1.5.10</span> <strong>Membuat model</strong></h3>
+<section id="konsep-naive-bayes" class="level4" data-number="1.5.10.1">
+<h4 data-number="1.5.10.1" class="anchored" data-anchor-id="konsep-naive-bayes"><span class="header-section-number">1.5.10.1</span> <strong>Konsep Naive Bayes</strong></h4>
+<p>Naïve Bayes Classifier merupakan sebuah metoda klasifikasi yang berakar pada teorema Bayes . Metode pengklasifikasian dengan menggunakan metode probabilitas dan statistik.</p>
+<p>Rumus Naive Bayes:​ <span class="math display">\[ P(C|X) = \frac {P(C) - P(X|C)}{P(X)} \]</span></p>
+<p>penjelasan: - P(C|X) = nilai probabilitas posterior dari kelas C given fitur X - P(C) = Nilai probabilitas prior dari kelas C - P(X|C) = likelihood dari fitur X jika kelasnya adalah C - P(X) = nilai probabilitas evidensi atau probabilitas dari fitur X</p>
+<p><span class="math display">\[ P(A) = \frac {n(A)}{n(s)} \]</span></p>
+<p>Penjelasan: - P(A) = peluang - n(A) = jumlah peluang yang mungkin terjadi - n(S) = jumlah sampel dari sebuah kejadian</p>
+</section>
+</section>
+<section id="menggunakan-minmaxscaler" class="level3" data-number="1.5.11">
+<h3 data-number="1.5.11" class="anchored" data-anchor-id="menggunakan-minmaxscaler"><span class="header-section-number">1.5.11</span> Menggunakan Minmaxscaler</h3>
+<p>Rumus untuk mencari Minmaxscaler:</p>
+<p><span class="math display">\[ X' = \frac{X - min}{max - min} \]</span></p>
+<p>Penjelasan rumusnya: - X = nilai yang sudah di normalisasi - min = nilai data minimal - max = nilai data maksimal</p>
+<p>Menggunakan Metode Naive Bayes</p>
+<div class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> SelectKBest, mutual_info_classif</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> GaussianNB</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>best_accuracy_nb_zscore <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>best_k_zscore <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>best_accuracy_nb_minmax <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>best_k_minmax <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, fitur_train.shape[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Buat objek SelectKBest dengan mutual_info_classif sebagai fungsi skor</span></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>    k_best <span class="op">=</span> SelectKBest(score_func<span class="op">=</span>mutual_info_classif, k<span class="op">=</span>k)</span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fiturkan objek SelectKBest ke data training dan testing untuk kedua normalisasi (zscore dan minmax)</span></span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>    zscore_training_terbaik <span class="op">=</span> k_best.fit_transform(zscore_training, target_train)</span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>    zscore_testing_terbaik <span class="op">=</span> k_best.transform(zscore_testing)</span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>    minmaxtraining_terbaik <span class="op">=</span> k_best.fit_transform(minmaxtraining, target_train)</span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>    minmaxtesting_terbaik <span class="op">=</span> k_best.transform(minmaxtesting)</span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Buat dan latih model dengan normalisasi zscore</span></span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a>    model_zscore <span class="op">=</span> GaussianNB()</span>
+<span id="cb63-22"><a href="#cb63-22" aria-hidden="true" tabindex="-1"></a>    model_zscore.fit(zscore_training_terbaik, target_train)</span>
+<span id="cb63-23"><a href="#cb63-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-24"><a href="#cb63-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lakukan prediksi pada data uji dengan normalisasi zscore</span></span>
+<span id="cb63-25"><a href="#cb63-25" aria-hidden="true" tabindex="-1"></a>    y_pred_nb_zscore <span class="op">=</span> model_zscore.predict(zscore_testing_terbaik)</span>
+<span id="cb63-26"><a href="#cb63-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-27"><a href="#cb63-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Hitung akurasi dengan normalisasi zscore</span></span>
+<span id="cb63-28"><a href="#cb63-28" aria-hidden="true" tabindex="-1"></a>    accuracy_nb_zscore <span class="op">=</span> accuracy_score(target_test, y_pred_nb_zscore)</span>
+<span id="cb63-29"><a href="#cb63-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-30"><a href="#cb63-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Buat dan latih model dengan normalisasi minmax</span></span>
+<span id="cb63-31"><a href="#cb63-31" aria-hidden="true" tabindex="-1"></a>    model_minmax <span class="op">=</span> GaussianNB()</span>
+<span id="cb63-32"><a href="#cb63-32" aria-hidden="true" tabindex="-1"></a>    model_minmax.fit(minmaxtraining_terbaik, target_train)</span>
+<span id="cb63-33"><a href="#cb63-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-34"><a href="#cb63-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lakukan prediksi pada data uji dengan normalisasi minmax</span></span>
+<span id="cb63-35"><a href="#cb63-35" aria-hidden="true" tabindex="-1"></a>    y_pred_nb_minmax <span class="op">=</span> model_minmax.predict(minmaxtesting_terbaik)</span>
+<span id="cb63-36"><a href="#cb63-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-37"><a href="#cb63-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Hitung akurasi dengan normalisasi minmax</span></span>
+<span id="cb63-38"><a href="#cb63-38" aria-hidden="true" tabindex="-1"></a>    accuracy_nb_minmax <span class="op">=</span> accuracy_score(target_test, y_pred_nb_minmax)</span>
+<span id="cb63-39"><a href="#cb63-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-40"><a href="#cb63-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Memeriksa apakah akurasi dengan normalisasi zscore lebih baik dari yang sebelumnya</span></span>
+<span id="cb63-41"><a href="#cb63-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> accuracy_nb_zscore <span class="op">&gt;</span> best_accuracy_nb_zscore:</span>
+<span id="cb63-42"><a href="#cb63-42" aria-hidden="true" tabindex="-1"></a>        best_accuracy_nb_zscore <span class="op">=</span> accuracy_nb_zscore</span>
+<span id="cb63-43"><a href="#cb63-43" aria-hidden="true" tabindex="-1"></a>        best_k_zscore <span class="op">=</span> k</span>
+<span id="cb63-44"><a href="#cb63-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-45"><a href="#cb63-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Memeriksa apakah akurasi dengan normalisasi minmax lebih baik dari yang sebelumnya</span></span>
+<span id="cb63-46"><a href="#cb63-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> accuracy_nb_minmax <span class="op">&gt;</span> best_accuracy_nb_minmax:</span>
+<span id="cb63-47"><a href="#cb63-47" aria-hidden="true" tabindex="-1"></a>        best_accuracy_nb_minmax <span class="op">=</span> accuracy_nb_minmax</span>
+<span id="cb63-48"><a href="#cb63-48" aria-hidden="true" tabindex="-1"></a>        best_k_minmax <span class="op">=</span> k</span>
+<span id="cb63-49"><a href="#cb63-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-50"><a href="#cb63-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dengan Normalisasi Zscore:"</span>)</span>
+<span id="cb63-51"><a href="#cb63-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fitur terbaik yang bisa digunakan"</span>, best_k_zscore, <span class="st">"dengan akurasi : "</span>, best_accuracy_nb_zscore)</span>
+<span id="cb63-52"><a href="#cb63-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-53"><a href="#cb63-53" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dengan Normalisasi Minmax:"</span>)</span>
+<span id="cb63-54"><a href="#cb63-54" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fitur terbaik yang bisa digunakan"</span>, best_k_minmax, <span class="st">"dengan akurasi : "</span>, best_accuracy_nb_minmax)</span>
+<span id="cb63-55"><a href="#cb63-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-56"><a href="#cb63-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Ambil indeks fitur terbaik dari SelectKBest</span></span>
+<span id="cb63-57"><a href="#cb63-57" aria-hidden="true" tabindex="-1"></a>best_feature_indices_zscore <span class="op">=</span> SelectKBest(score_func<span class="op">=</span>mutual_info_classif, k<span class="op">=</span>best_k_zscore).fit(zscore_training, target_train).get_support(indices<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb63-58"><a href="#cb63-58" aria-hidden="true" tabindex="-1"></a>best_feature_indices_minmax <span class="op">=</span> SelectKBest(score_func<span class="op">=</span>mutual_info_classif, k<span class="op">=</span>best_k_minmax).fit(minmaxtraining, target_train).get_support(indices<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb63-59"><a href="#cb63-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-60"><a href="#cb63-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Dapatkan nama fitur terbaik dari indeksnya</span></span>
+<span id="cb63-61"><a href="#cb63-61" aria-hidden="true" tabindex="-1"></a>best_features_zscore <span class="op">=</span> [fitur.columns[i] <span class="cf">for</span> i <span class="kw">in</span> best_feature_indices_zscore]</span>
+<span id="cb63-62"><a href="#cb63-62" aria-hidden="true" tabindex="-1"></a>best_features_minmax <span class="op">=</span> [fitur.columns[i] <span class="cf">for</span> i <span class="kw">in</span> best_feature_indices_minmax]</span>
+<span id="cb63-63"><a href="#cb63-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-64"><a href="#cb63-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-65"><a href="#cb63-65" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fitur terbaik yang digunakan (dengan normalisasi Zscore):"</span>)</span>
+<span id="cb63-66"><a href="#cb63-66" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(best_features_zscore)</span>
+<span id="cb63-67"><a href="#cb63-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-68"><a href="#cb63-68" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fitur terbaik yang digunakan (dengan normalisasi Minmax):"</span>)</span>
+<span id="cb63-69"><a href="#cb63-69" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(best_features_minmax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dengan Normalisasi Zscore:
+Fitur terbaik yang bisa digunakan 5 dengan akurasi :  0.8395061728395061
+Dengan Normalisasi Minmax:
+Fitur terbaik yang bisa digunakan 6 dengan akurasi :  0.8333333333333334
+Fitur terbaik yang digunakan (dengan normalisasi Zscore):
+['Age_at_diagnosis', 'IDH1', 'ATRX', 'PTEN', 'EGFR']
+Fitur terbaik yang digunakan (dengan normalisasi Minmax):
+['Age_at_diagnosis', 'IDH1', 'ATRX', 'PTEN', 'CIC', 'NOTCH1']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="co"># kolom-kolom yang ingin Anda pertahankan</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>kolom_pilihan <span class="op">=</span> [<span class="st">'IDH1'</span>, <span class="st">'Age_at_diagnosis'</span>, <span class="st">'CIC'</span>, <span class="st">'NOTCH1'</span>, <span class="st">'Grade'</span>]</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Buat dataset baru hanya dengan kolom yang dipilih</span></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>dataset_baru <span class="op">=</span> data[kolom_pilihan]</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Simpan dataset baru dalam file CSV</span></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>dataset_baru.to_csv(<span class="st">'dataset_baru_nb.csv'</span>, index<span class="op">=</span><span class="va">False</span>)  <span class="co"># Simpan ke file CSV tanpa menyertakan indeks</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>dataset_baru.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="51">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">IDH1</th>
+<th data-quarto-table-cell-role="th">Age_at_diagnosis</th>
+<th data-quarto-table-cell-role="th">CIC</th>
+<th data-quarto-table-cell-role="th">NOTCH1</th>
+<th data-quarto-table-cell-role="th">Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>51.30</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>38.72</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>35.17</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>32.78</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>31.51</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="split-dataset-1" class="level3" data-number="1.5.12">
+<h3 data-number="1.5.12" class="anchored" data-anchor-id="split-dataset-1"><span class="header-section-number">1.5.12</span> Split Dataset</h3>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co"># memisahkan kolom fitur dan target</span></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>fitur <span class="op">=</span> dataset_baru.drop(columns<span class="op">=</span>[<span class="st">'Grade'</span>], axis <span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> dataset_baru[<span class="st">'Grade'</span>]</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="co"># melakukan pembagian dataset, dataset dibagi menjadi 80% data training dan 20% data testing</span></span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>fitur_train, fitur_test, target_train, target_test <span class="op">=</span> train_test_split(fitur, target, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="normalisasi-data-1" class="level3" data-number="1.5.13">
+<h3 data-number="1.5.13" class="anchored" data-anchor-id="normalisasi-data-1"><span class="header-section-number">1.5.13</span> Normalisasi Data</h3>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># menentukan lokasi file pickle akan disimpan</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">'zcorescaler_baru.pkl'</span></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat dan melatih objek Standarscaler</span></span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>zscorescaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>zscorescaler.fit(fitur_train)</span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="co"># menyimpan model ke dalam file pickle</span></span>
+<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>    pickle.dump(zscorescaler, <span class="bu">file</span>)</span>
+<span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a><span class="co"># memanggil kembali model normalisasi minmaxscaler dari file pickle</span></span>
+<span id="cb68-16"><a href="#cb68-16" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'rb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb68-17"><a href="#cb68-17" aria-hidden="true" tabindex="-1"></a>    zscorescaler <span class="op">=</span> pickle.load(<span class="bu">file</span>)</span>
+<span id="cb68-18"><a href="#cb68-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-19"><a href="#cb68-19" aria-hidden="true" tabindex="-1"></a><span class="co"># menerapkan normalisasi zscore pada data training</span></span>
+<span id="cb68-20"><a href="#cb68-20" aria-hidden="true" tabindex="-1"></a>zscoretraining <span class="op">=</span> zscorescaler.transform(fitur_train)</span>
+<span id="cb68-21"><a href="#cb68-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-22"><a href="#cb68-22" aria-hidden="true" tabindex="-1"></a><span class="co"># menerapkan normalisasi zscore pada data testing</span></span>
+<span id="cb68-23"><a href="#cb68-23" aria-hidden="true" tabindex="-1"></a>zscoretesting <span class="op">=</span> zscorescaler.transform(fitur_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>### Membuat Model</p>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> GaussianNB</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definisi model Gaussian Naive Bayes</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>nb <span class="op">=</span> GaussianNB()</span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Definisi grid parameter yang akan diuji</span></span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>param_grid <span class="op">=</span> {</span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'priors'</span>: [<span class="va">None</span>],  <span class="co"># Anda dapat menentukan probabilitas prior jika memiliki pengetahuan sebelumnya tentang distribusi kelas</span></span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'var_smoothing'</span>: [<span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">16</span>, <span class="dv">30</span>]  <span class="co"># Hyperparameter yang mengontrol sebagian varians terbesar yang akan ditambahkan untuk stabilitas perhitungan</span></span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-14"><a href="#cb69-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Inisialisasi GridSearchCV</span></span>
+<span id="cb69-15"><a href="#cb69-15" aria-hidden="true" tabindex="-1"></a>grid_search <span class="op">=</span> GridSearchCV(estimator<span class="op">=</span>nb, param_grid<span class="op">=</span>param_grid, cv<span class="op">=</span><span class="dv">5</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb69-16"><a href="#cb69-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-17"><a href="#cb69-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Latih model dengan data latih dan mencari parameter terbaik</span></span>
+<span id="cb69-18"><a href="#cb69-18" aria-hidden="true" tabindex="-1"></a>grid_search.fit(zscoretraining, target_train)</span>
+<span id="cb69-19"><a href="#cb69-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-20"><a href="#cb69-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Hasil parameter terbaik</span></span>
+<span id="cb69-21"><a href="#cb69-21" aria-hidden="true" tabindex="-1"></a>best_params <span class="op">=</span> grid_search.best_params_</span>
+<span id="cb69-22"><a href="#cb69-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Parameter terbaik:"</span>, best_params)</span>
+<span id="cb69-23"><a href="#cb69-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-24"><a href="#cb69-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Model dengan parameter terbaik</span></span>
+<span id="cb69-25"><a href="#cb69-25" aria-hidden="true" tabindex="-1"></a>best_nb <span class="op">=</span> grid_search.best_estimator_</span>
+<span id="cb69-26"><a href="#cb69-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-27"><a href="#cb69-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluasi model terbaik pada data uji</span></span>
+<span id="cb69-28"><a href="#cb69-28" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> best_nb.score(zscoretesting, target_test)</span>
+<span id="cb69-29"><a href="#cb69-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Akurasi model terbaik:"</span>, accuracy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Parameter terbaik: {'priors': None, 'var_smoothing': 19}
+Akurasi model terbaik: 0.5297619047619048</code></pre>
+</div>
+</div>
+</section>
+<section id="simpan-model" class="level3" data-number="1.5.14">
+<h3 data-number="1.5.14" class="anchored" data-anchor-id="simpan-model"><span class="header-section-number">1.5.14</span> Simpan Model</h3>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Model dengan parameter terbaik</span></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>best_nb <span class="op">=</span> grid_search.best_estimator_</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Simpan model Decision Tree terbaik ke dalam file pickle</span></span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'best_nb_model.pkl'</span>, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>    pickle.dump(best_nb, <span class="bu">file</span>)</span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluasi model terbaik pada data uji</span></span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> best_nb.score(zscoretesting, target_test)</span>
+<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Akurasi model terbaik:"</span>, accuracy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Akurasi model terbaik: 0.5297619047619048</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="evaluation" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="evaluation"><span class="header-section-number">1.6</span> EVALUATION</h2>
+<ul>
+<li>Evalution ini terdapat model Naive Bayes Classifier dengan menggunakan zscore</li>
+<li>Nilai akurasinya yaitu sebesar 0.52</li>
+</ul>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'best_nb_model.pkl'</span>, <span class="st">'rb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>    model_nb <span class="op">=</span> pickle.load(<span class="bu">file</span>)</span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>model_nb.fit(zscoretraining, target_train)</span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>y_pred_nb <span class="op">=</span> model_nb.predict(zscoretesting)</span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="co"># akurasi</span></span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>akurasi_nb <span class="op">=</span> accuracy_score(target_test, y_pred_nb)</span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Akurasi Naive Bayes Classifier : '</span>, akurasi_nb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Akurasi Naive Bayes Classifier :  0.5297619047619048</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
